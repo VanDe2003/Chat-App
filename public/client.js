@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", checkLoggedIn);
 
 const {MongoClient} = require("mongodb");
 
-const uri = "mongodb://localhost:27017";
+const uri = "mongodb+srv://phanvande2003:VanDex2003@sdfaf.ncrrtpe.mongodb.net/";
 const client = new MongoClient(uri);
 
 client.connect((err) => {
