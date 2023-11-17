@@ -1,6 +1,6 @@
 const {MongoClient} = require("mongodb");
 
-const uri = "mongodb://127.0.0.1:27017";
+const uri = "mongodb+srv://phanvande2003:VanDex2003@sdfaf.ncrrtpe.mongodb.net/";
 const client = new MongoClient(uri);
 
 function connectMongoDB() {
@@ -19,7 +19,7 @@ function connectMongoDB() {
         const messagesCollection = db.collection("messages");
         const imagesCollection = db.collection("images");
 
-        client.close();
+        // client.close();
     });
 }
 
