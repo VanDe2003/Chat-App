@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat App</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="login-container">
+            <h1>Login</h1>
+            <input type="text" id="username-input" placeholder="Username" />
+            <input type="password" id="password-input" placeholder="Password" />
+            <button id="login-button">Login</button>
+            <div id="register-link-container">Don't have an account? <a href="#" id="register-link">Register here</a></div>
+        </div>
+
+        <div id="register-container">
+            <h1>Register</h1>
+            <input type="text" id="register-username-input" placeholder="Username" />
+            <input type="password" id="register-password-input" placeholder="Password" />
+            <button id="register-button">Register</button>
+            <div id="login-link-container">Already have an account? <a href="#" id="login-link">Login here</a></div>
+        </div>
+
+        <div id="chat-container">
+            <div id="message-container"></div>
+            <div id="message-container-1">Room Chat 1</div>
+            <div id="message-container-2">Room Chat 2</div>
+            <div id="message-container-3">Room Chat 3</div>
+
+            <div class="img_emoji">
+                <label for="file-input" id="file-label">
+                    <span class="file-icon">
+                        <img src="../image.png" alt="Attachment Icon" />
+                    </span>
+                </label>
+                <input type="file" id="file-input" />
+
+                <div id="emoji-panel">
+                    <button id="myBtn"><img src="../icon.png" /></button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <script>
+                                for (let i = 128512; i <= 128591; i++) {
+                                    document.write('<button class="emoji"> &#x' + i.toString(16).toUpperCase() + "; </button>");
+                                    if (i % 10 == 1) document.write("<br>");
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div id="msgModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chat-rooms-list">
+                    <button id="room1">Room 1</button>
+                    <button id="room2">Room 2</button>
+                    <button id="room3">Room 3</button>
+                </div>
+            </div>
+
+            <div id="input-container">
+                <input type="text" id="message-input" placeholder="Type a message" />
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
+        <script src="index.js"></script>
+        <script src="emoji-modal.js"></script>
+    </body>
+</html>
