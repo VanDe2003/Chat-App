@@ -40,7 +40,8 @@ io.on("connection", (socket) => {
 
 const {MongoClient} = require("mongodb");
 
-const mongoURI = "mongodb://localhost:27017/chatApp";
+const mongoURI = "mongodb+srv://phanvande2003:VanDex2003@sdfaf.ncrrtpe.mongodb.net/";
+
 const client = new MongoClient(mongoURI);
 
 client.connect((err) => {
@@ -51,9 +52,9 @@ client.connect((err) => {
 
     console.log("Connected to MongoDB");
 
-    const server = app.listen(PORT, () => {
+    const PORT = process.env.PORT || 3000;
+
+    const server = http.listen(PORT, () => {
         console.log(`Server listening on port ${PORT}`);
     });
-
-    const io = socketio(server);
 });
