@@ -10,13 +10,13 @@ const upload = multer({dest: "public/uploads/"});
 const secretKey = "your-secret-key";
 
 const {MongoClient} = require("mongodb");
-const mongoURL = "mongodb://127.0.0.1:27017";
+const mongoURL = "mongodb+srv://phanvande2003:VanDex2003@sdfaf.ncrrtpe.mongodb.net/";
 const dbName = "ChatApp";
 
 let db;
 MongoClient.connect(mongoURL, {useUnifiedTopology: true})
     .then((client) => {
-        console.log("Connected to MongoDB");
+        console.log("Connected to MongoDB Atlas");
         db = client.db(dbName);
     })
     .catch((err) => console.error("Error connecting to MongoDB:", err));
